@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Two Variables</title>
+</head>
+<body>
+    <h1>Swap Two Variables</h1>
+
+  
+    <div id="result"></div>
+
+    <script>
+        // Swapping using a third variable
+        function swapWithThirdVariable(a, b) {
+            let temp = a;
+            a = b;
+            b = temp;
+            return [a, b];
+        }
+
+     //// Swapping without a third variable
+        function swapWithoutThirdVariable(a, b) {
+            a = a + b; // Add both values
+            b = a - b; // Subtract b from the sum (gets the original a)
+            a = a - b; // Subtract the new b from the sum (gets the original b)
+            return [a, b];
+        }
+
+        // Initial values
+        let x = 10;
+        let y = 20;
+
+        // Swapping with a third variable
+        let result1 = swapWithThirdVariable(x, y);
+
+        // Swapping without a third variable
+        let result2 = swapWithoutThirdVariable(x, y);
+
+        // Display results
+        document.getElementById("result").innerHTML = `
+            <p>Original values: x = ${x}, y = ${y}</p>
+            <p>After swapping with a third variable: x = ${result1[0]}, y = ${result1[1]}</p>
+            <p>After swapping without a third variable: x = ${result2[0]}, y = ${result2[1]}</p>
+        `;
+    </script>
+</body>
+</html>
